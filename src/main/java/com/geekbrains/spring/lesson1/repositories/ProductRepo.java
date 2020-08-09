@@ -1,6 +1,7 @@
-package com.geekbrains.spring.lesson1.beans;
+package com.geekbrains.spring.lesson1.repositories;
 
-import com.geekbrains.spring.lesson1.Product;
+import com.geekbrains.spring.lesson1.MySessionFactory;
+import com.geekbrains.spring.lesson1.models.Product;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -34,8 +35,7 @@ public class ProductRepo {
         return products;
     }
 
-    public void saveProduct(String name, int price) {
-        Product product = new Product(name, price);
+    public void saveProduct(Product product) {
         session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         session.save(product);

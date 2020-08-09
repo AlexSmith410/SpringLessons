@@ -1,6 +1,7 @@
-package com.geekbrains.spring.lesson1.beans;
+package com.geekbrains.spring.lesson1.repositories;
 
-import com.geekbrains.spring.lesson1.User;
+import com.geekbrains.spring.lesson1.MySessionFactory;
+import com.geekbrains.spring.lesson1.models.User;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -34,8 +35,7 @@ public class UserRepo {
         return users;
     }
 
-    public void saveUser(String name, int age){
-        User user = new User(name, age);
+    public void saveUser(User user){
         session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         session.save(user);

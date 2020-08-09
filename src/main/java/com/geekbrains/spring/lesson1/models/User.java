@@ -1,4 +1,4 @@
-package com.geekbrains.spring.lesson1;
+package com.geekbrains.spring.lesson1.models;
 
 import javax.persistence.*;
 

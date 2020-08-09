@@ -1,7 +1,7 @@
-package com.geekbrains.spring.lesson1.beans;
+package com.geekbrains.spring.lesson1.services;
 
-import com.geekbrains.spring.lesson1.Product;
-import com.geekbrains.spring.lesson1.beans.ProductRepo;
+import com.geekbrains.spring.lesson1.models.Product;
+import com.geekbrains.spring.lesson1.repositories.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +24,7 @@ public class ProductService {
         return productRepo.getAllProducts();
     }
 
-    public void saveProduct(String name, int price){
-        productRepo.saveProduct(name, price);
+    public void saveProduct(Product product){
+        productRepo.saveProduct(product);
     }
 }

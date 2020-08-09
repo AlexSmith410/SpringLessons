@@ -1,7 +1,7 @@
-package com.geekbrains.spring.lesson1.beans;
+package com.geekbrains.spring.lesson1.services;
 
-import com.geekbrains.spring.lesson1.User;
-import com.geekbrains.spring.lesson1.beans.UserRepo;
+import com.geekbrains.spring.lesson1.models.User;
+import com.geekbrains.spring.lesson1.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +24,7 @@ public class UserService {
         return userRepo.getAllUsers();
     }
 
-    public void saveUser(String name, int age){
-        userRepo.saveUser(name, age);
+    public void saveUser(User user){
+        userRepo.saveUser(user);
     }
 }
