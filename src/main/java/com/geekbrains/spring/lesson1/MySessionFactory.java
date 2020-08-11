@@ -1,4 +1,4 @@
-package com.geekbrains.spring.lesson1.beans;
+package com.geekbrains.spring.lesson1;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,7 +10,11 @@ public class MySessionFactory {
     private SessionFactory sessionFactory;
 
     public MySessionFactory(){
-        this.sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+        this.sessionFactory = new Configuration().configure("configs/hibernate.cfg.xml").buildSessionFactory();
+    }
+
+    public void close(){
+        sessionFactory.close();
     }
 
     public Session getCurrentSession(){
